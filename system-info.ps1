@@ -1,1 +1,0 @@
-Write-Host "=== SYSTEM INFO ===" -ForegroundColor Cyan; Write-Host "Computer: $(hostname)"; Write-Host "RAM: $([math]::Round((Get-WmiObject Win32_ComputerSystem).TotalPhysicalMemory / 1GB, 2)) GB"; Get-Volume | Where-Object {$.DriveLetter} | ForEach-Object {Write-Host "Drive $($.DriveLetter): $('{0:P0}' -f ($.SizeRemaining / $.Size)) free"}
